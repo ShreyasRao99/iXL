@@ -1,0 +1,166 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/light-logo2x.png" alt="Logo" width="30" height="24">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <a class="navbar-brand" href="#">
+                <img style="margin-left:100px;" src="assets/images/light-logo2x.png" alt="Logo">
+              </a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active mx-4" href="#">Home Page</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mx-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Company
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action 1</a></li>
+                  <li><a class="dropdown-item" href="#">Action 2</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Action 3</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mx-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Account
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action 1</a></li>
+                  <li><a class="dropdown-item" href="#">Action 2</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Action 3</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mx-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Products
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action 1</a></li>
+                  <li><a class="dropdown-item" href="#">Action 2</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Action 3</a></li>
+                </ul>
+            </li>
+            <button class="btn btn-warning" (click)="open(content)">BOOK DEMO</button>
+          </ul>
+        </div>
+      </div>
+    </div>
+</nav>
+    
+<div class="container c1" style="padding-top:150px;">
+    <img src="assets/images/main-img.svg" style="max-width:100%" alt="">
+    <div class="row body-row">
+        <div class="col-sm-5" style="padding-left:60px;">
+            <h4>Welcome</h4>
+            <p class="p1" style="margin-bottom:20px;margin-top:10px">Ready to help you in your projects!</p>
+            <br>
+            <p class="p2" style="margin-bottom:20px;">Our sales team will get in touch to better understand your needs, and will help you with the sign-up process.</p>
+            <button class="btn btn-warning">Start Now</button>
+            <button type="button" class="btn btn-outline-primary mx-2">Contact sales</button>
+        </div>
+        <div class="col-sm-7 col-body">
+            <div class="row row">
+                <div class="col-sm-6">
+                    <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;height:215px;">
+                        <img src="assets/images/people.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Accounts</h5>
+                          <p class="card-text">Manage an unlimited number of account from one place.</p>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;height:215px;">
+                        <img src="assets/images/lock.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Roles and Permissions</h5>
+                          <p class="card-text">Full control with flexible user permissions for views and actions.</p>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-6">
+                    <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;height:215px;">
+                        <img src="assets/images/bot.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title mb-3">Integration</h5>
+                          <p class="card-text">Connect the tools you already use.</p>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;height:215px;">
+                        <img src="assets/images/chip.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Chat Bots</h5>
+                          <p class="card-text">AI powered chat bots to improve your business and customer satisfaction.</p>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Enter your details</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="form">
+			<div class="mb-3">
+                <div class="form-group mt-2">
+                    <label for="fname" class="pb-1">First Name</label>
+                    <input type="text" class="form-control" formControlName="fname" id="fname" placeholder="First Name">
+                    <div *ngIf="f['fname'].touched && f['fname'].invalid">
+                        <span *ngIf="f['fname'].errors && f['fname'].errors['required']" style="color:red;">
+                          *First name is required
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="contact" class="pb-1">Contact</label>
+                    <input type="tel" class="form-control" formControlName="contact" id="contact" placeholder="Mobile No">
+                    <div *ngIf="f['contact'].touched && f['contact'].invalid">
+                      <span *ngIf="f['contact'].errors && f['contact'].errors['required']" style="color:red;">
+                        *Contact number is required
+                      </span>
+                  </div>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="email" class="pb-1">Email</label>
+                    <input type="email" class="form-control" formControlName="email" id="email" placeholder="Email Id">
+                    <div *ngIf="f['email'].touched && f['email'].invalid">
+                      <span *ngIf="f['email'].errors && f['email'].errors['required']" style="color:red;">
+                        *Email is required
+                      </span>
+                    </div>
+                    <div *ngIf="f['email'].touched && f['email'].invalid">
+                      <span *ngIf="f['email'].errors && f['email'].errors['email']" style="color:red;">
+                        *Enter a valid email
+                      </span>
+                    </div>
+                </div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" [disabled]="!form.valid" (click)="modal.close('Save click')">Submit</button>
+	</div>
+</ng-template>
+
+
+<hr />
+
+<pre>{{ closeResult }}</pre>
